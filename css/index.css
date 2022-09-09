@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(255, 250, 205);
+    background-image: url(./images/breaking\ bad.jpg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 125px;
+    background-size: 1000px;
+}
+
+.logo{
+    height: 100px;
+    width: 100px;
+}
+
+header{
+    background-color: rgb(205, 133, 63);
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+}
+
+.padre{
+    background-color: rgb(210, 180, 140);
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.headright{
+    flex-direction: row-reverse;
+    display: flex;
+}
+
+.peli{
+    width: 200px;
+    height: 300px;
+}
+
+.footer{
+    background-color: black;
+}
