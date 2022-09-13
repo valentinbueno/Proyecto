@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(255, 250, 205);
+    background-color:	rgb(169, 169, 169);
     background-image: url(./images/breaking\ bad.jpg);
     background-repeat: no-repeat;
     background-position-x: center;
@@ -8,20 +8,28 @@ body{
 }
 
 .logo{
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 150px;
+}
+
+.botones{
+    font-size: 22px;
+    color: white;
+    margin-left: 15px;
 }
 
 header{
-    background-color: rgb(205, 133, 63);
+    background-color: black;
     background-size: cover;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 100px;
 }
 
 .padre{
-    background-color: rgb(210, 180, 140);
-    height: 350px;
+    background-color: black;
+    height: 400px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -33,13 +41,49 @@ header{
 .headright{
     flex-direction: row-reverse;
     display: flex;
+    height: 50px;
+    justify-content: space-between;
 }
 
 .peli{
     width: 200px;
     height: 300px;
+    transition: transform .2s;
+    align-self: center;
+}
+
+.peli:hover{
+    transform: scale(1.2);
 }
 
 .footer{
     background-color: black;
+}
+
+.search{
+    height: 40px;
+}
+
+.headleft{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.full{
+    flex-direction: column;
+    align-items: center;
+}
+
+.nombres{
+    align-self: center;
+    color: white;
+}
+
+.secciones{
+    color: black;
+}
+
+.dev{
+    color: white;
 }
