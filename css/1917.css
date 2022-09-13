@@ -41,7 +41,7 @@ header{
 }
 
 body{
-    background-color:	midnightblue;
+    background-color:	rgb(4, 4, 48);
 }
 
 .padre{
@@ -104,7 +104,7 @@ body{
     margin-top: 20px;
     background-color: black;
     border-radius: 6px;
-    border: solid 3px turquoise;
+    border: solid 1px turquoise;
 }
 
 .cara{
