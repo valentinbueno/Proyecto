@@ -364,3 +364,99 @@ a{
 .desc{
     font-size: 19px;
 }
+
+
+@media (max-width: 420px) {
+
+
+header {
+   height: 10vh; ;
+   width: 100%;
+
+   background-color: rgb(4, 4, 48);;
+   background-size: cover;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  
+
+}
+
+.logo {
+height: 8vh;
+width: 20vw;
+border: solid 2px white;
+
+}
+
+
+.botones {
+    font-size: 12px;
+
+}
+
+.headleft {
+width:120vw ;
+
+}
+
+
+.headright {
+width: 5.5vh;
+height: 8vw;
+ ;
+}
+
+.search {
+width: 5.5vh;
+height: 8vw
+}
+
+#carrusel-contenido {
+    width: 100%;
+    height: 50vw;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: left;
+    margin-top: 15px;
+    display: none
+
+}
+.secciones {
+width: 100%;
+height: 4vw;
+font-size:13px
+}
+
+.padre1 {
+    width: 225%;
+    height: 55vw;
+    
+
+
+}
+
+.full{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0px; 
+}
+
+
+.peli {
+height: 55vw;
+width: auto;
+margin: 0px;
+padding
+
+
+}
+
+.nombres {
+display: none;
+
+}
+
+}
