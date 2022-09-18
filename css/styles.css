@@ -370,6 +370,8 @@ a{
 
 @media (max-width: 420px) {
 
+/* INDEX.HTML */
+
 
     header {
         height: 10vh; ;
@@ -419,17 +421,18 @@ a{
      }
      
      #carrusel-contenido {
-         width: 100%;
-         height: 50vw;
+         width: 100vw;
+         height: 80vh;
          margin: 0 auto;
          overflow: hidden;
          text-align: left;
          margin-top: 15px;
-         display: none
+         display:none
 
      }
 
      .secciones {
+        display: block;
         width: 100%;
         height: 4vw;
         font-size:18px;
@@ -444,14 +447,13 @@ a{
     justify-content: space-between; 
     background-color: black;
     height: 248vh;
-    display: block;
     align-items: center;
     list-style: none;
     border: solid 3px turquoise;
-    width: 100%;
+    width: 80vw;
+    margin: 0px 20px 0px 20px;
 
  
-    margin: 0px 0px 0px 0px;
     
      }
    .peli {
@@ -461,7 +463,7 @@ a{
 
     .full {
        
-    display: flex;
+    display:flex;
     flex-direction: column;
     align-items: center;
     display: flex;
@@ -471,7 +473,7 @@ a{
     margin: 0px 0px 0px 0px;
 
    
-    }
+   
    }
     .nombres {
       
@@ -484,7 +486,64 @@ a{
 
 
     .footer {
-        width: 100vw;
+        width: 80vw;
         font-size:14px;
         font-family:monospace;
     }
+}
+  
+/* #DETALLE  */
+   
+@media (max-width: 419px) {
+    
+    header {
+        display: none;
+    } 
+   
+    .padre2 {
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+    .trailer {
+    width:140vw ;
+    height: 55vh;
+
+    }
+    
+    .textos {
+        width: 140vw;
+    }
+
+    .cara {
+        width: 25vw;
+        height: 21vh;
+
+    }
+
+    .botoneras {
+        width:140vw;
+        margin-top: 30px;
+    
+    }
+
+
+
+
+
+    }
+    
+  
+    
+    margin-top: 20px;
+    margin-left: 20px;
+
+
+
+
+   
+
+   
+}
