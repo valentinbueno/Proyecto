@@ -29,6 +29,7 @@ header{
     align-items: center;
     height: 100px;
     border-radius: 6px;
+    width: 100%;
 }
 
 .padre1{
@@ -368,43 +369,32 @@ a{
 }
 
 
+       
 @media (max-width: 420px) {
-
-/* INDEX.HTML */
-
 
     header {
         height: 10vh; ;
-        width: 100%;
         background-color: black;;
         background-size: cover;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 0px;
-      
-       
-     
+        width: 100%;
      }
      
      .logo {
      height: 8vh;
      width: 19vw;
-     
-     
      }
-     
      
      .botones {
          font-size: 12px;
-     
      }
      
      .headleft {
      width:80vw ;
-     
      }
-     
      
      .headright {
      width: 15vh;
@@ -412,36 +402,22 @@ a{
      }
      
      .search {
-     
      width: 10vh;
      height: 8vw;
      margin-right: 0px;
      margin-left: 0px;
-     
      }
      
      #carrusel-contenido {
-         width: 100vw;
-         height: 80vh;
-         margin: 0 auto;
-         overflow: hidden;
-         text-align: left;
-         margin-top: 15px;
          display:none
-
      }
 
      .secciones {
-        display: block;
-        width: 100%;
-        height: 4vw;
         font-size:18px;
         margin: 50px 5px 10px 50px
      }
 
-
      .padre1 {
-
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
@@ -450,12 +426,14 @@ a{
     align-items: center;
     list-style: none;
     border: solid 3px turquoise;
-    width: 80vw;
-    margin: 0px 20px 0px 20px;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
 
  
     
      }
+
+
    .peli {
     margin: 15px 0px 0px 0px;
     align-self: center;
@@ -490,60 +468,77 @@ a{
         font-size:14px;
         font-family:monospace;
     }
-}
-  
-/* #DETALLE  */
-   
-@media (max-width: 419px) {
-    
-    header {
-        display: none;
-    } 
-   
+
+
+
+
+
+
+
+
+
+
     .padre2 {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        
+
 
 
     }
 
     .trailer {
-    width:140vw ;
+    width:60vw ;
     height: 55vh;
+    display: none;
+   
+
 
     }
     
     .textos {
-        width: 140vw;
+    font-size: 10px;
+        display: ;
+
     }
 
     .cara {
         width: 25vw;
         height: 21vh;
+        display: none;
+
 
     }
 
     .botoneras {
-        width:140vw;
+        width: 80%;
         margin-top: 30px;
+        display: none;
+
     
     }
 
-
-
-
+    .desc {
+        width:80%;
+        display: none;
 
     }
-    
-  
-    
-    margin-top: 20px;
-    margin-left: 20px;
 
+.personajes {
+    width: 80%;
+    display: none;
 
-
-
-   
-
-   
 }
+
+
+.personajito {
+    width: 10%;
+    display: none;
+}
+
+.sinopsis {
+    font-size: 15px;
+}
+    }
+
