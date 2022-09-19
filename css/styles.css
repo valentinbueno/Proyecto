@@ -212,6 +212,39 @@ a{
     }
 }
 
+
+.title {
+font-family: monospace;
+font-size: 38px;
+color: white;
+text-align: center;
+
+
+}
+.indice {
+ text-align: center;
+ color: aqua;
+font-weight: bold;
+justify-self: center;
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-size: 28px;
+}
+
+
+
+
+
+.listita {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-align: center;
+color: beige;
+list-style: none;
+font-size: 23px;
+
+
+
+
+}
 .titulo{
     color: white;
     text-align: center;
@@ -233,7 +266,10 @@ a{
 
 .genero{
     color: white;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 .lista{
@@ -253,35 +289,35 @@ a{
 }
 
 .accion{
-    background-image: url(./images/accion.jpg);
+    background-image: url(../images/accion.jpg);
 }
 
 .comedia{
-    background-image: url(./images/comedia.jpg);
+    background-image: url(../images/comedia.jpg);
 }
 
 .animadas{
-    background-image: url(./images/animadas.jpg);
+    background-image: url(../images/animadas.jpg);
 }
 
 .series{
-    background-image: url(./images/series.jpg);
+    background-image: url(../images/series.jpg);
 }
 
 .drama{
-    background-image: url(./images/drama.jpg);
+    background-image: url(../images/drama.jpg);
 }
 
 .documentales{
-    background-image: url(./images/documental.jpg);
+    background-image: url(../images/documental.jpg);
 }
 
 .terror{
-    background-image: url(./images/terror.jpg);
+    background-image: url(../images/terror.jpg);
 }
 
 .suspenso{
-    background-image: url(./images/suspenos.jpg);
+    background-image: url(../images/suspenos.jpg);
 }
 
 .padre2{
@@ -312,7 +348,7 @@ a{
 }
 
 .botoneras{
-    margin-top: 12px;
+    margin-top: 20px;
     margin-left: 15px;
     font-size: 30px;
     display: flex;
@@ -361,7 +397,8 @@ a{
     text-align: center;
     color: white;
     margin-top: 20px;
-    margin-right: 30px;
+    margin-right:30px;
+    margin-left:30px;
 }
 
 .desc{
@@ -414,7 +451,7 @@ a{
 
      .secciones {
         font-size:18px;
-        margin: 50px 5px 10px 50px
+        margin: 50px 0px 10px 10px
      }
 
      .padre1 {
@@ -427,10 +464,7 @@ a{
     list-style: none;
     border: solid 3px turquoise;
     width: 100%;
-    margin: 0px 0px 0px 0px;
-
- 
-    
+    margin: 0px 0px 30px 0px;
      }
 
 
@@ -458,87 +492,65 @@ a{
         align-self: center;
         margin-top: 2px;
         font-size: 15px;
-
-      
     }
-
-
-    .footer {
-        width: 80vw;
-        font-size:14px;
-        font-family:monospace;
-    }
-
-
-
-
-
-
-
-
-
 
     .padre2 {
         display: flex;
         flex-direction: column;
         width: 100%;
-        
-
-
-
     }
 
     .trailer {
-    width:60vw ;
-    height: 55vh;
-    display: none; 
-   
-
-
+    width:90% ;
+    height: 55vh;  
     }
-    
-    .textos {
-    font-size: 10px;
-        display: ;
+   
+    .desc {
+        width: 90%;
+        }
 
+    .sinopsis {
+        font-size: 15px;
     }
 
     .cara {
-        width: 25vw;
-        height: 21vh;
-        display: none;
+        width: 14vw;
+        height: 12vh;  
+    }
 
-
+    .actor {
+        font-size: 12px;
     }
 
     .botoneras {
-        width: 80%;
-        margin-top: 30px;
-        display: none;
-
-    
+    margin-top: 0px;
     }
 
-    .desc {
-        width:80%;
-        display: none;
-
+    .boton {
+       font-size: 10px;
     }
 
-.personajes {
-    width: 80%;
-    display: none;
-
-}
-
-
-.personajito {
-    width: 10%;
-    display: none;
-}
-
-.sinopsis {
-    font-size: 15px;
-}
+   
+    .personajes {
+    width: 90%;
     }
 
+    .personajito {
+        margin-left: 10px;
+    }
+
+    .footer {
+        width: 100%;
+    }
+
+    .dev {
+        font-size: 14px;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+
+    .arriba {
+   }
+
+   
+}
