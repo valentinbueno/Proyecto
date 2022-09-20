@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./css/images/logo5.jpeg">
+    <link rel="shortcut icon" href="./images/logo5.jpeg">
     <link rel="stylesheet" href="./css/styles.css">
     <title>Movie Star</title>
 </head>
 <body>
 
-<header>
+    <header>
 
-    <div class="headleft">
-        <img class="logo" src="./images/logo5.jpeg" alt="Logo">
-        <p class="botones"> HOME | <a href="./favoritos.html">FAVORITOS</a> | <a href="./generos.html">GENEROS</a> </p>
-    </div>
-
-    <div class="headright">
-        <input class= "search" type="search" name="search" value="" placeholder="Buscar...">
-    </div>
-
-</header>
+        <div class="headleft">
+            <img class="logo" src="./images/logo5.jpeg" alt="Logo">
+            <p class="botones"> <a href="./index.html">HOME</a> | <a href="./favorite.html">FAVORITOS</a> | <a href="./genre.html">GENEROS</a> </p>
+        </div>
+    
+        <div class="headright">
+            <form action="./search_results.html" method="get">
+                <input class= "search" type="search" name="search" value="" placeholder="Buscar...">
+            </form>
+        </div>
+    
+    </header>
 
 <div id="carrusel-contenido">
     <div id="carrusel-caja">
@@ -42,7 +44,7 @@
 <section class="padre1">
     
     <div class="full">
-        <a href="./detalle.html"><img  class="peli" src="./images/1917.jpg"></a>
+        <a href="./detail-movie.html"><img  class="peli" src="./images/1917.jpg"></a>
         <h3 class="nombres">1917</h3>
     </div>
 
@@ -125,13 +127,14 @@
 
     <div class="full">
         <img  class="peli" src="./images/shop.jpg">
-        <h3 class="nombres">Confesiones de una compradora</h3>
+        <h3 class="nombres">Confesiones</h3>
     </div>
 
 </section>
 
 <footer class="footer">
-    <p class="dev">Developed by Valentin Bueno, Felipe Jordan y Lucas Bachrach</p>
+    <p class="dev">Desarrollado por Valentin Bueno, Felipe Jordan y Lucas Bachrach</p>
+    <p class="dev endin"> Terminos y condiciones | Privacidad | Contact us </p>
 </footer>
 
 </body>

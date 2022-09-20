@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Star</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="./images/logo5.jpeg">
 </head>
 <body>
+
     <header>
+
         <div class="headleft">
             <img class="logo" src="./images/logo5.jpeg" alt="Logo">
-            <p class="botones"> <a href="./index.html">HOME</a> | FAVORITOS | <a href="./generos.html">GENEROS</a> </p>
+            <p class="botones"> <a href="./index.html">HOME</a> | <a href="./favorite.html">FAVORITOS</a> | <a href="./genre.html">GENEROS</a> </p>
         </div>
+    
         <div class="headright">
-            <input class= "search" type="search" name="search" value="">
+            <form action="./search_results.html" method="get">
+                <input class= "search" type="search" name="search" value="" placeholder="Buscar...">
+            </form>
         </div>
+    
     </header>
 
     <h1 class="titulo">Favoritos</h1>
@@ -147,7 +154,8 @@
 
     
     <footer class="footer">
-        <p class="dev">Developed by Valentin Bueno, Felipe Jordan y Lucas Bachrach</p>
+        <p class="dev">Desarrollado por Valentin Bueno, Felipe Jordan y Lucas Bachrach</p>
+        <p class="dev endin"> Terminos y condiciones | Privacidad | Contact us </p>
     </footer>
 </body>
 </html>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="./images/logo5.jpeg">
     <title>Movie Star</title>
 </head>
 <body>
@@ -13,13 +14,15 @@
 
         <div class="headleft">
             <img class="logo" src="./images/logo5.jpeg" alt="Logo">
-            <p class="botones"> <a href="./index.html">HOME</a> | FAVORITOS | <a href="./generos.html">GENEROS</a> </p>
+            <p class="botones"> <a href="./index.html">HOME</a> | <a href="./favorite.html">FAVORITOS</a> | <a href="./genre.html">GENEROS</a> </p>
         </div>
-
+    
         <div class="headright">
-            <input class= "search" type="search" name="search" value="Buscar...">
+            <form action="./search_results.html" method="get">
+                <input class= "search" type="search" name="search" value="" placeholder="Buscar...">
+            </form>
         </div>
-        
+    
     </header>
     
 
@@ -48,7 +51,7 @@
         </div>
 
         <div class="full">
-            <img  class="peli" src=
+            <img  class="peli" src="images/favoritos/jumanji.jpg">
             <h3 class="nombres">Jumanji</h3>
         </div>
 
@@ -113,9 +116,10 @@
     </section>
 
 
-        <footer class="footer">
-            <p class="dev">Developed by Valentin Bueno, Felipe Jordan y Lucas Bachrach</p>
-        </footer>
+    <footer class="footer">
+        <p class="dev">Desarrollado por Valentin Bueno, Felipe Jordan y Lucas Bachrach</p>
+        <p class="dev endin"> Terminos y condiciones | Privacidad | Contact us </p>
+    </footer>
     
 
 </body>
