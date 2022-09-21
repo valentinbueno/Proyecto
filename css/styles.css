@@ -379,13 +379,14 @@ footer{
      .search {
      width: 10vh;
      height: 8vw;
-     margin-right: 0px;
-     margin-left: 0px;
+     
      }
      
      #carrusel-contenido {
          display:none
      }
+
+
 
      .secciones {
         font-size:18px;
@@ -394,40 +395,33 @@ footer{
 
      .padre1 {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between; 
     background-color: black;
     height: 248vh;
     align-items: center;
-    list-style: none;
     border: solid 3px turquoise;
     width: 100%;
     margin: 0px 0px 30px 0px;
      }
 
+     .full {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0px 0px 0px 0px;
+       }
 
-   .peli {
-    margin: 15px 0px 0px 0px;
-    align-self: center;
+     .peli {
+        margin: 15px 0px 0px 0px;
    }
 
-    .full {
-       
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0px 0px 0px 0px;
-
-   
-   
-   }
     .nombres {
-      
-        align-self: center;
         margin-top: 2px;
         font-size: 15px;
     }
@@ -468,7 +462,6 @@ footer{
        font-size: 10px;
     }
 
-   
     .personajes {
     width: 90%;
     }
@@ -476,6 +469,39 @@ footer{
     .personajito {
         margin-left: 10px;
     }
+
+
+
+   .padre3 {
+    width: 100%;
+    height: 88vh;
+   }
+
+
+   .title {
+    font-size: 24px;
+   }
+
+   .indice {
+    font-size:25px;
+   }
+
+   .listita {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size:19px;
+    margin:10px 0px 0px 0px
+
+   }
+   .kung{
+    height: 170vh;
+    }
+    
+    .lupa{
+        height: 4.6vh;
+    }
+
 
     .footer {
         width: 100%;
@@ -490,36 +516,5 @@ footer{
         font-family:Arial, Helvetica, sans-serif;
     }
 
-   
-
-   .padre3 {
-    flex-direction:column;
-    width: 100%;
-    height: 77vh;
-   }
-
-
-
-   .title {
-    font-size: 24px;
-   }
-
-   .indice {
-    font-size:20px;
-   }
-
-   .listita {
-
-    font-size:19px;
-    margin:10px 0px 0px 0px
-
-   }
-   .kung{
-    height: 170vh;
-    }
-    
-    .lupa{
-        height: 4.6vh;
-    }
 
 }
