@@ -16,7 +16,7 @@ header{
 }
 
 .headright{
-    flex-direction: row-reverse;
+    flex-direction: column;
     display: flex;
     height: 50px;
     justify-content: space-between;
@@ -37,8 +37,30 @@ header{
 
 .search{
     height: 40px;
+    width: 250px;
     border-radius: 10px;
     border: solid 2px turquoise;
+}
+
+.alerta{
+    width: 250px;
+    height: 30px;
+    background-color: red;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.indicacion{
+    color: beige;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
 }
 
 a{
