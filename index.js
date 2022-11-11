@@ -1,6 +1,7 @@
-console.log("Practica")
+window.addEventListener("load,")
 
-let busqueda = document.querySelector(".search")
+    let busqueda = document.querySelector(".search")
 
-busqueda.addEventListener('sumbit',function() 
-console.log('hola')
+busqueda.addEventListener('sumbit',function()
+
+    if 
