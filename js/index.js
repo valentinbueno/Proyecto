@@ -96,3 +96,6 @@ fetch(urlpopseries)
     .catch(function(error){
         console.log(error);
     })
+
+
+
