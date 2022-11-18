@@ -1,11 +1,9 @@
 let apikey = '5af2599bc48eedc0c872d98ac992b8e3'
-let generosurl=`https://api.themoviedb.org/3/genre/movie/list?api_key=${apikey}&language=en-US`
+let generospeliurl=`https://api.themoviedb.org/3/genre/movie/list?api_key=${apikey}&language=en-US`
+let generoseriesurl = `https://api.themoviedb.org/3/genre/tv/list?api_key=${apikey}&language=en-US`
 
 
-
-
-
-fetch(generosurl)
+fetch(generospeliurl)
     .then(function(response){
         return response.json();
     })
@@ -16,7 +14,7 @@ fetch(generosurl)
         let elementosgenerospeli = ""
 
         
-        for (let i=0; i<6; i++){
+        for (let i=0; i<10; i++){
             elementosgenerospeli += `
             <li> ${data.genres[i].name}</li>`
 
@@ -28,3 +26,31 @@ fetch(generosurl)
     .catch(function(error){
         console.log(error);
     })
+
+
+
+
+
+fetch(generoseriesurl)
+.then(function(response){
+    return response.json();
+})
+.then(function(data){
+    console.log(data);
+
+    let section1 = document.querySelector('.generoseries');
+    let elementosgeneroseries = ""
+
+    
+    for (let i=0; i<10; i++){
+        elementosgeneroseries += `
+        <li> ${data.genres[i].name}</li>`
+
+    }
+    
+    section1.innerHTML = elementosgeneroseries
+})  
+
+.catch(function(error){
+    console.log(error);
+})

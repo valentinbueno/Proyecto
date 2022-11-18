@@ -1,7 +1,16 @@
-let detalleserie = `https://api.themoviedb.org/3/tv/popular?api_key=${apikey}&language=en-US&page=1`
+let qs = new URLSearchParams(location.search)
+let serie_id = qs.get("id")
+
+console.log(serie_id)
+
+// el parametro que nos interesa del qs es el id.
+
+let apikey = '5af2599bc48eedc0c872d98ac992b8e3'
+
+let urldetalleserie = `https://api.themoviedb.org/3/tv/popular?api_key=${apikey}&language=en-US&page=1`
 
 
-fetch(detalleserie)
+fetch(urldetalleserie)
     .then(function(response){
         return response.json();
     })
@@ -31,8 +40,8 @@ fetch(detalleserie)
                 
     })
 
-.catch(function(error){
-    console.log(error);
-})
+// .catch(function(error){
+//     console.log(error);
+// })
 
     

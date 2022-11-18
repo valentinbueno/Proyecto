@@ -10,11 +10,6 @@ let section3 = document.querySelector('.peliculasvalo');
 
 
 
-
-
-
-
-
 fetch(urlpopmovies)
     .then(function(response){
         return response.json();
