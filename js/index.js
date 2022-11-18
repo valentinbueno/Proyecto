@@ -8,6 +8,13 @@ let section1 = document.querySelector('.peliculaspop');
 let section2 = document.querySelector('.seriespop');
 let section3 = document.querySelector('.peliculasvalo');
 
+let movie = ''
+let series = ''
+let valoradas = ''
+
+
+
+
 
 
 fetch(urlpopmovies)
@@ -16,15 +23,25 @@ fetch(urlpopmovies)
     })
     .then(function(data){
         console.log(data);
-        let contenedor = document.querySelector(".peliculaspop")
+        
         for (let i=0; i<5; i++){
             console.log(data.results[i]);
             let title= data.results[i].title
             let imagen = data.results[i].poster_path
+            let fecha = data.results[i].release_date
             let id= data.results[i].id
-            contenedor.innerHTML += `<div class="full">
-            <a href="./detail-movie.html"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
+            movie += `<div class="full">
+            <a href="./detail-movie.html?nombre=pepe>
+
+
+
+
+            es el id nombre=pepe>
+
+            <img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
             <h3 class="nombres">${title}</h3>
+            <li class="fechas">${fecha}</li>
+
             </div>`
         }
             section1.innerHTML = movie;
@@ -49,10 +66,13 @@ fetch(urlpopseries)
             console.log(data.results[i]);
             let title= data.results[i].original_name
             let imagen = data.results[i].poster_path
+            let fecha = data.results[i].first_air_date
             let id= data.results[i].id
             contenedor.innerHTML += `<div class="full">
-            <a href="./detail-movie.html"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
+            <a href="./detail-movie.html">
+            <img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
             <h3 class="nombres">${title}</h3>
+            <li class="fechas">${fecha}</li>
             </div>`
         }
             section1.innerHTML = series;
@@ -75,11 +95,14 @@ fetch(urlpopseries)
         for (let i=0; i<5; i++){
             console.log(data.results[i]);
             let title= data.results[i].title
+            let fecha = data.results[i].release_date
             let imagen = data.results[i].poster_path
             let id= data.results[i].id
             contenedor.innerHTML += `<div class="full">
             <a href="./detail-movie.html"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
             <h3 class="nombres">${title}</h3>
+            <li class="fechas">${fecha}</li>
+
 
             </div>`
         }
@@ -91,6 +114,5 @@ fetch(urlpopseries)
     .catch(function(error){
         console.log(error);
     })
-
 
 
