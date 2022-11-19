@@ -4,8 +4,6 @@ let urlpopmovies= `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&
 let urlvalomovies= `https://api.themoviedb.org/3/movie/top_rated?api_key=${apikey}&language=en-US&page=1`
 
 
-            // es el id nombre=pepe>
-
 
 
 fetch(urlpopmovies)
@@ -15,24 +13,27 @@ fetch(urlpopmovies)
     .then(function(data){
         console.log(data);
 
+        let arraypopmovies= data.results;
         let section1 = document.querySelector('.peliculaspop');
+        let popmovies=[];
+
 
         for (let i=0; i<5; i++){
-            console.log(data.results[i]);
-            let title= data.results[i].title
-            let imagen = data.results[i].poster_path
-            let fecha = data.results[i].release_date
-            let id= data.results[i].id
 
-            section1.innerHTML += 
+            let title= arraypopmovies[i].title
+            let imagen = arraypopmovies[i].poster_path
+            let fecha = arraypopmovies[i].release_date
+            let id= arraypopmovies[i].id
+
+           popmovies += 
             `<div class="full">
-            <a href="./detail-movie.html?nombre=pepe>
-            <a href="./detail-movie.html"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
+            <a href="./detail-movie.html?id=${id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
             <h3 class="nombres">${title}</h3>
             <li class="fechas">${fecha}</li>
             </div>`
         }
 
+        section1.innerHTML= popmovies;
 
     })
 
@@ -49,22 +50,26 @@ fetch(urlpopseries)
     .then(function(data){
         console.log(data);
 
+        let arraypopseries= data.results;
         let section2 = document.querySelector('.seriespop');
+        let popseries=[];
 
         for (let i=0; i<5; i++){
-            console.log(data.results[i]);
-            let title= data.results[i].original_name
-            let imagen = data.results[i].poster_path
-            let fecha = data.results[i].first_air_date
-            let id= data.results[i].id
+            
+            let title= arraypopseries[i].original_name
+            let imagen = arraypopseries[i].poster_path
+            let fecha = arraypopseries[i].first_air_date
+            let id= arraypopseries[i].id
 
-            section2.innerHTML += 
+            popseries += 
             `<div class="full">
-            <a href="./detail-movie.html"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
+            <a href="./detail-movie.html?id=${id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
             <h3 class="nombres">${title}</h3>
             <li class="fechas">${fecha}</li>
             </div>`
         }
+
+        section2.innerHTML = popseries;
 
     })
 
@@ -80,23 +85,27 @@ fetch(urlpopseries)
     .then(function(data){
         console.log(data);
 
+        let arrayvalomovies= data.results;
         let section3 = document.querySelector('.peliculasvalo');
+        let valomovies = []
 
 
         for (let i=0; i<5; i++){
-            console.log(data.results[i]);
-            let title= data.results[i].title
-            let fecha = data.results[i].release_date
-            let imagen = data.results[i].poster_path
-            let id= data.results[i].id
 
-            section3.innerHTML += 
+            let title= arrayvalomovies[i].title
+            let fecha = arrayvalomovies[i].release_date
+            let imagen = arrayvalomovies[i].poster_path
+            let id= arrayvalomovies[i].id
+
+            valomovies += 
             `<div class="full">
-            <a href="./detail-movie.html"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
+            <a href="./detail-movie.html?id=${id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
             <h3 class="nombres">${title}</h3>
             <li class="fechas">${fecha}</li>
             </div>`
         }
+
+        section3.innerHTML = valomovies;
 
     })
 
