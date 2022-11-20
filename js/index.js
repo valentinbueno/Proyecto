@@ -63,7 +63,7 @@ fetch(urlpopseries)
 
             popseries += 
             `<div class="full">
-            <a href="./detail-movie.html?id=${id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
+            <a href="./detail-serie.html?id=${id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${imagen}"></a>
             <h3 class="nombres">${title}</h3>
             <li class="fechas">${fecha}</li>
             </div>`

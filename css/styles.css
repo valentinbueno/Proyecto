@@ -219,6 +219,13 @@ footer{
     font-size: 22px;
 }
 
+
+.listadetalles {
+    list-style-type: square;
+   
+}
+
+
 .personajes{
     flex-direction: row;
     display: flex;
@@ -459,6 +466,11 @@ footer{
         display: flex;
         flex-direction: column;
         width: 100%;
+    }
+
+    .imgdetalleseries {
+        width:6%;
+        height: 55vh;   
     }
 
     .trailer {
