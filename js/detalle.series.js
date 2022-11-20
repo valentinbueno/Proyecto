@@ -38,7 +38,6 @@ fetch(urldetailseries)
         <h1 class="titulo">${data.original_name}</h1>
         <div class="desc">
             <img class="imgdetalleseries" src="https://image.tmdb.org/t/p/w500/${data.poster_path}"/>
-            <div class = "contenidoserie">
             <p class="sinopsis"> ${data.overview}</p>
             <ul>
                 <li>Valoracion: ${data.vote_average}</li>
@@ -47,8 +46,8 @@ fetch(urldetailseries)
                 <li>Genero: 
                     <ul class=listadetalles></ul>
                  </li>                
+         
             </ul>
-            </div>
         </div>
     </div>`
 
@@ -76,6 +75,7 @@ fetch(urldetailseries)
 
 
 let providers_url = `https://api.themoviedb.org/3/tv/${detail_id}/watch/providers?api_key=${apikey}`
+let providers_watch_providers = `https://api.themoviedb.org/3/tv/${providers_url}/watch/providers?api_key=5af2599bc48eedc0c872d98ac992b8e3`
 
 fetch(providers_url)
 	.then(function(response){
@@ -84,10 +84,22 @@ fetch(providers_url)
 	.then(function(data){
 	console.log(data);
 
-    let proveedores = ''
+	
+	let proveedores = ''
 
 
 //aca arranca lo de los ifs
+if (providers_url.results.AR && providers_url.results.AR.flatrate) {
+	providers_url +=
+	`<h2 class="plataforma de la serie">Plataformas: ${data.flatrate}</h2>`
+	`<imagen class="portada">`
+	`<a class="plataforma" href="./detalleserie.html?=${data.id}">`
+	for(let i=0; i<providers_url.results.AR.flatrate.length; i++){
+		const elementosgenerosdetalles = providers_url.results.AR.flatrate[i];
+		providers_url += `<imagen class="plataforma" src="${data.logo_path}">`
+	}
+}
+
 // su DetalleSerieContent es proveedores en la nuestra, osea ahi tenes que remplazar eso
 // su DetalleSerieSection es nuestro seccion
 
@@ -99,15 +111,4 @@ fetch(providers_url)
 })
 	.catch(function(error){
 	console.log('El error es: ' + error);
-})
-
-let favoritos = []
-let botonFav = document.querySelector('.favoritos');
-
-
-botonFav.addEventListener('click', function(){
-    
-    favoritos.push(detail_id)
-    console.log(favoritos);
-
 })
