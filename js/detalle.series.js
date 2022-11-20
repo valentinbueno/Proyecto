@@ -100,3 +100,13 @@ fetch(providers_url)
 	console.log('El error es: ' + error);
 })
 
+let favoritos = []
+let botonFav = document.querySelector('.favoritos');
+
+
+botonFav.addEventListener('click', function(){
+    
+    favoritos.push(detail_id)
+    console.log(favoritos);
+
+})
