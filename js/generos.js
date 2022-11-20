@@ -54,3 +54,6 @@ fetch(generoseriesurl)
 .catch(function(error){
     console.log(error);
 })
+
+
+
