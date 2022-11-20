@@ -215,8 +215,24 @@ footer{
     text-align: center;
 }
 
+
+
+
 .desc{
     font-size: 22px;
+    display: flex;
+    flex-direction: row;
+}
+
+.contenidoserie {
+    display: flex;
+    flex-direction: column;
+}
+
+.imgdetalleseries {
+    height: 65vh;
+    width:40%;
+    margin-right:20px ;
 }
 
 

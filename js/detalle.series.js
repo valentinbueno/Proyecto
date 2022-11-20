@@ -38,6 +38,7 @@ fetch(urldetailseries)
         <h1 class="titulo">${data.original_name}</h1>
         <div class="desc">
             <img class="imgdetalleseries" src="https://image.tmdb.org/t/p/w500/${data.poster_path}"/>
+            <div class = "contenidoserie">
             <p class="sinopsis"> ${data.overview}</p>
             <ul>
                 <li>Valoracion: ${data.vote_average}</li>
@@ -46,8 +47,8 @@ fetch(urldetailseries)
                 <li>Genero: 
                     <ul class=listadetalles></ul>
                  </li>                
-         
             </ul>
+            </div>
         </div>
     </div>`
 

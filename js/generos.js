@@ -16,7 +16,8 @@ fetch(generospeliurl)
         
         for (let i=0; i<10; i++){
             elementosgenerospeli += `
-            <li> ${data.genres[i].name}</li>`
+            <li> <a href= "./detail-genres.html?id=${data.genres[i].id}"> ${data.genres[i].name} </a> </li>`
+    
 
         }
         
