@@ -110,3 +110,29 @@ seccion.innerHTML+= proveedores
 	.catch(function(error){
 	console.log('El error es: ' + error);
 })
+
+//Creamos un array vacio
+let favoritos = []
+
+//Buscamos si ya hay info en el array
+let recuperoStorage = localStorage.getItem('serieFav')
+
+if (recuperoStorage){
+    favoritos = JSON.parse(recuperoStorage)
+}
+
+//Seleccionamos el boton de favoritos
+let botonFav = document.querySelector('.favoritos');
+
+//Creamos un evento para cuando se haga click en el boton de favoritos
+botonFav.addEventListener('click', function(){
+    
+    //Guardamos el id de la serie seleccionada en el array vacio
+    favoritos.push(detail_id)
+    
+    //Guardamos el id en el localStorage
+    let favsToString = JSON.stringify(favoritos)
+    localStorage.setItem('serieFav', favsToString)
+
+    console.log(localStorage);
+})
