@@ -153,7 +153,8 @@ fetch(url_peliculas)
             resultadodebusqueda.innerText = `No hubo resultados para su busqueda`
         } 
 
-
+        
+        
         else{
             for(i=0; i<6; i++) {
         
