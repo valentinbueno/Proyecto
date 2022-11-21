@@ -26,15 +26,21 @@ console.log(detail_id)
 
 //fetch
 
-let urldetallegeneros = `https://api.themoviedb.org/3/discover/movie?api_key=${apikey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${detail_id}&with_watch_monetization_types=flatrate`
+let urldetallegenerospeli = `https://api.themoviedb.org/3/discover/movie?api_key=${apikey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${detail_id}&with_watch_monetization_types=flatrate`
 
 
-
+let urldetallegenerostv = `https://api.themoviedb.org/3/discover/tv?api_key=${apikey}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=${detail_id}&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`
 
 let genero = document.querySelector(".nombregenero")
 let nombre = QSobject.get("name")
+let type = QSobject.get("type")
 
-fetch(urldetallegeneros)
+
+genero.innerHTML = nombre
+
+if (type =="pelicula"){
+
+fetch(urldetallegenerospeli)
 	.then(function(response){
 	return response.json();
 
@@ -47,27 +53,16 @@ fetch(urldetallegeneros)
     let arraygeneros = data.results
     let seccion = document.querySelector(".padre1")
     let elementospeliculas= ''
-    let resultado = ''
 
 
-
-    for (let i=0; i< arraygeneros.length; i++){
-        if(arraygeneros[i].poster_path ==null) {
-
-        resultado +=
-        `<p class = "error > Hubo un error, no encontraron peliculas o series para dicho genero`
-
-        seccion.innerHTML = resultado }
-
-    else{
-
-        let id = arraygeneros[i].id
+    for (let i=0; i< 10; i++){
+        
 
         elementospeliculas+=
     
                        
              `<div class="full">
-                <a href="./detail-movie.html?id=${id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${arraygeneros[i].poster_path}"></a>
+                <a href="./detail-movie.html?id=${arraygeneros[i].id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${arraygeneros[i].poster_path}"></a>
                 <h3 class="nombres">${arraygeneros[i].title}}</h3>
              </div>`
 
@@ -75,7 +70,7 @@ fetch(urldetallegeneros)
 
 
                 
-        }}
+        }
         
 
 
@@ -86,3 +81,56 @@ fetch(urldetallegeneros)
 	console.log('El error es: ' + error);
 })
 
+
+}
+
+else if (type=="serie") {
+
+    fetch(urldetallegenerostv)
+	.then(function(response){
+	return response.json();
+
+})
+
+	.then(function(data){
+	console.log(data);
+
+
+    let arraygeneros = data.results
+    let seccion = document.querySelector(".padre1")
+    let elementostv= ''
+
+
+    for (let i=0; i< 10; i++){
+        
+        elementostv+=
+    
+                       
+             `<div class="full">
+                <a href="./detail-serie.html?id=${arraygeneros[i].id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${arraygeneros[i].poster_path}"></a>
+                <h3 class="nombres">${arraygeneros[i].name}}</h3>
+             </div>`
+
+                seccion.innerHTML=elementostv;
+                
+        }
+        
+
+
+    })
+
+
+.catch(function(error){
+	console.log('El error es: ' + error);
+})
+
+
+
+}
+
+// else if(){
+
+//     elementospeliculas +=
+//    `<p class = "error > Hubo un error, no encontraron peliculas o series para dicho genero`
+
+//    seccion.innerHTML = elementospeliculas }

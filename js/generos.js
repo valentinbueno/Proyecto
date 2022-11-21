@@ -15,10 +15,8 @@ fetch(generospeliurl)
 
         
         for (let i=0; i<10; i++){
-            elementosgenerospeli += `
-            <li> <a href= "./detail-genres.html?id=${data.genres[i].id}"> ${data.genres[i].name} </a> </li>`
-    
-
+            elementosgenerospeli += 
+            `<a href="./detail-genres.html?id=${data.genres[i].id}&name=${data.genres[i].name}&type=pelicula"><li> ${data.genres[i].name}</li></a>`
         }
         
         section1.innerHTML = elementosgenerospeli
@@ -44,8 +42,9 @@ fetch(generoseriesurl)
 
     
     for (let i=0; i<10; i++){
-        elementosgeneroseries += `
-        <li> ${data.genres[i].name}</li>`
+        elementosgeneroseries += 
+        `<a href="./detail-genres.html?id=${data.genres[i].id}&name=${data.genres[i].name}&type=serie"><li> ${data.genres[i].name}</li></a>`
+
 
     }
     
