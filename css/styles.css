@@ -327,6 +327,11 @@ footer{
     float: left;
     width: 33.333%;
 }
+
+
+.nombregenero {
+    color: white;
+}
 @-moz-keyframes automatizacion {
     0% {
         margin-left: 0;

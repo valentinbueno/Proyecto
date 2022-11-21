@@ -20,12 +20,19 @@ let QSobject = new URLSearchParams(QueryString)
 
 
 let detail_id = QSobject.get('id')
+console.log(detail_id)
 
 //endpoint con el id de la qs
 
 //fetch
 
 let urldetallegeneros = `https://api.themoviedb.org/3/discover/movie?api_key=${apikey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${detail_id}&with_watch_monetization_types=flatrate`
+
+
+
+
+let genero = document.querySelector(".nombregenero")
+let nombre = QSobject.get("name")
 
 fetch(urldetallegeneros)
 	.then(function(response){
@@ -42,6 +49,8 @@ fetch(urldetallegeneros)
     let elementospeliculas= ''
     let resultado = ''
 
+
+
     for (let i=0; i< arraygeneros.length; i++){
         if(arraygeneros[i].poster_path ==null) {
 
@@ -51,55 +60,29 @@ fetch(urldetallegeneros)
         seccion.innerHTML = resultado }
 
     else{
+
+        let id = arraygeneros[i].id
+
         elementospeliculas+=
-            `<li> ${arraygeneros[i].original_title} </li>`
-
-
-
-
-            
-                  
-
-
-
     
-            
+                       
+             `<div class="full">
+                <a href="./detail-movie.html?id=${id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${arraygeneros[i].poster_path}"></a>
+                <h3 class="nombres">${arraygeneros[i].title}}</h3>
+             </div>`
 
-        //     <h1 class="titulo">${data.original_name}</h1>
-        //     <div class="desc">
-        //         <img class="imgdetalleseries" src="https://image.tmdb.org/t/p/w500/${data.poster_path}"/>
-        //         <p class="sinopsis"> ${data.overview}</p>
-        //         <ul>
-        //             <li>Valoracion: ${data.vote_average}</li>
-        //             <li>Fecha de Estreno: ${data.first_air_date}</li>
-        //             <li>Temporadas:${data.number_of_seasons}</li>       
-        //             <li>Genero: 
-        //                 <ul class=listadetalles></ul>
-        //              </li>                
-             
-        //         </ul>
-        //     </div>
-        // </div>`
+                seccion.innerHTML=elementospeliculas;
 
 
+                
+        }}
+        
 
 
-
-        }
-    
-    
-
-    }
-
-
-
-
-
-    
-
-})
+    })
 
 
 .catch(function(error){
 	console.log('El error es: ' + error);
 })
+
