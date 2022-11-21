@@ -13,6 +13,7 @@ let QSobject = new URLSearchParams(QueryString)
 
 
 let detail_id = QSobject.get('id')
+console.log(detail_id)
 
 //endpoint con el id de la qs
 
