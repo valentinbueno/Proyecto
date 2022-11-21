@@ -14,7 +14,7 @@ fetch(generospeliurl)
         let elementosgenerospeli = ""
 
         
-        for (let i=0; i<10; i++){
+        for (let i=0; i<12; i++){
             elementosgenerospeli += 
             `<a href="./detail-genres.html?id=${data.genres[i].id}&name=${data.genres[i].name}&type=pelicula"><li> ${data.genres[i].name}</li></a>`
         }
@@ -41,7 +41,7 @@ fetch(generoseriesurl)
     let elementosgeneroseries = ""
 
     
-    for (let i=0; i<10; i++){
+    for (let i=0; i<12; i++){
         elementosgeneroseries += 
         `<a href="./detail-genres.html?id=${data.genres[i].id}&name=${data.genres[i].name}&type=serie"><li> ${data.genres[i].name}</li></a>`
 
