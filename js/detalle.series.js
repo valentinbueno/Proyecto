@@ -90,7 +90,7 @@ fetch(providers_url)
 //aca arranca lo de los ifs
 if (data.results.AR && data.results.AR.flatrate) {
 	proveedores +=
-	`<h2 class="tituloproveedor"> Plataformas:</h2>`
+	`<h2"> Plataformas:</h2>`
 	// `<imagen class="portada">`
 	`<a class="plataforma" href="./detalleserie.html?=${data.id}"</a>`
 	for(let i=0; i<data.results.AR.flatrate.length; i++){
