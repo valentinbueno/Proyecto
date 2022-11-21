@@ -129,46 +129,69 @@ let busqueda = document.querySelector(".busqueda")
 let comentario = document.querySelector(".indicacion")
 let alerta = document.querySelector(".alerta")
 
-let query_1 = location.search
-let query_2 = new URLSearchParams(query_1)
-let buscador_1 = query_2.get("buscador_1")
+let query = location.search
+let querys = new URLSearchParams(query)
+let buscador_1 = querys.get("buscador_1")
 
-let resultados = document.querySelector(".resultados")
-resultados.innerHTML += `Resultados para tu ${buscador_1}`
+let secciones = document.querySelector(".secciones")
+secciones.innerHTML += `Resultados para tu ${buscador_1}`
 
-let url = `https://api.themoviedb.org/3/search/company?api_key=5af2599bc48eedc0c872d98ac992b8e3&query=&page=1`
+let url_peliculas = `https://api.themoviedb.org/3/search/movie?api_key=5af2599bc48eedc0c872d98ac992b8e3&language=en-US&page=1&include_adult=false`
 
-fetch(url)
+fetch(url_peliculas)
     .then(function(response){
         return response.json()
     })
     .then(function(data){
         console.log(data);
-        let resultadodebusqueda = document.querySelector(".resultados");
+        let resultadodebusqueda = document.querySelector(".secciones");
+        let informacion = document.querySelector(".informacion")
         if (data.resultadodebusqueda.length==0){
             resultadodebusqueda.innerText = `No hubo resultados para su ${buscador_1}`
         } 
         else{
             for(i=0; i<6; i++);
             let poster_path = data.resultados[i].poster_path
-            let imagen = `https://image.tmdb.org/t/p/w500/${poster_path}`
+            let foto = `https://image.tmdb.org/t/p/w500/${poster_path}`
             let id = data.resultados[i].id
-            container.innerHTML += `<article class = "peliculabuscada">
-                    <a href="./detalle-pelis.html?movie_id=${id}"> <img src="${imagen}" alt="Foto${data.results[i].original_title} " class="foto"></a>
-                    <p class = "titulo_de_la_pelicula">${data.results[i].original_title}</p>
+            informacion.innerHTML += `<article class = "pelicula">
+                    <a href="./detail-movie?movie_id=${id}"> 
+                    <img src="${foto}" alt="foto${data.results[i].original_title}"></a>
+                    <p class = "titulo">${data.results[i].original_title}</p>
+                    <p class= "fecha_de_estreno">${data.results[i].release_date}</p>
+                </article>`
+        }
+    })
+    .catch(function(error){
+        console.log(error)
+    })
+
+let url_series = `https://api.themoviedb.org/3/search/tv?api_key=5af2599bc48eedc0c872d98ac992b8e3&language=en-US&page=1&include_adult=false`
+fetch(url_series)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data);
+        let resultadodebusqueda = document.querySelector(".secciones");
+        let informacion_series = document.querySelector('.informacion_sobre_series');
+        let informacion = document.querySelector(".informacion")
+        if (data.resultadodebusqueda.length==0){
+            informacion_series.innerHTML = "" //se deja vacio para que si no hay series, que no aparezca nada
+        }
+        else {
+            for(let i=0; i<6; i++);
+            let poster = data.resultados[i].poster_path
+            let foto = `https://image.tmdb.org/t/p/w500/${poster}`
+            let id = data.resultados[i].id
+            informacion.innerHTML += `<article class = "serie">
+                    <a href="./detail-serie.html?movie_id=${id}"> 
+                    <img src="${foto}" alt="foto${data.results[i].original_title}"></a>
+                    <p class = "titulo">${data.results[i].original_title}</p>
                     <p>${data.results[i].release_date}</p>
                 </article>`
         }
-        //if(data.resultadodebusqueda==""){
-            //comentario.innerText = "No ingreso ningun dato"
-            //alerta.style.display = "block"
-            //busqueda.style.borderRadius = "10px 10px 0 0"
-        //}
-        //else if(data.resultadodebusqueda<4){
-            //comentario.innerText ="la busqueda debe tener al menos 3 caracteres"
-            //alerta.style.display = "block"
-            //busqueda.style.borderRadius = "10px 10px 0 0"
-
-        //}
-
+    })
+    .catch(function(error){
+        console.log(error);
     })
