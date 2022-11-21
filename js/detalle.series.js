@@ -112,26 +112,42 @@ seccion.innerHTML+= proveedores
 })
 
 //Creamos un array vacio
-let favoritos = []
+let seriesFavoritas = []
 
 //Buscamos si ya hay info en el array
 let recuperoStorage = localStorage.getItem('serieFav')
 
-if (recuperoStorage){
-    favoritos = JSON.parse(recuperoStorage)
+if (recuperoStorage !== null){
+    seriesFavoritas = JSON.parse(recuperoStorage)
 }
 
 //Seleccionamos el boton de favoritos
 let botonFav = document.querySelector('.favoritos');
 
+//Si el id ya esta en la lista, el boton debe ofrecer la opcion de quitar de favoritos
+if (seriesFavoritas.includes(detail_id)){
+    botonFav.innerText = "Eliminar de favoritos"
+}
+
 //Creamos un evento para cuando se haga click en el boton de favoritos
 botonFav.addEventListener('click', function(){
     
-    //Guardamos el id de la serie seleccionada en el array vacio
-    favoritos.push(detail_id)
+    //Chequear si ya esta el id en el array
+    if (seriesFavoritas.includes(detail_id)){
+        let indiceserie = seriesFavoritas.indexOf(detail_id)
+        seriesFavoritas.splice(indiceserie, 1)
+        botonFav.innerText = "Agregar a Favoritos"
+    }
+    else{
+        //Guardamos el id de la serie seleccionada en el array vacio
+        seriesFavoritas.push(detail_id)
+        botonFav.innerText = "Eliminar de Favoritos"
+    }
+
+
     
     //Guardamos el id en el localStorage
-    let favsToString = JSON.stringify(favoritos)
+    let favsToString = JSON.stringify(seriesFavoritas)
     localStorage.setItem('serieFav', favsToString)
 
     console.log(localStorage);
