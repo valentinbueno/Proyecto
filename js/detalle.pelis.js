@@ -2,17 +2,6 @@ let apikey = '5af2599bc48eedc0c872d98ac992b8e3'
 let QueryString = location.search
 let QSobject = new URLSearchParams(QueryString)
 let detail_id = QSobject.get('id')
-console.log(detail_id)
-let favoritos = []
-let botonFav = document.querySelector('.favoritos');
-
-
-// botonFav.addEventListener('click', function(){
-    
-//     favoritos.push(detail_id)
-//     console.log(favoritos);
-
-// })
 
 let url_detailmovie = `https://api.themoviedb.org/3/movie/${detail_id}?api_key=${apikey}&language=en-US`
 
@@ -173,4 +162,46 @@ return response.json();
 })
 .catch(function(error){
     console.log(error)
+})
+
+//Creamos un array vacio
+let pelisFavoritas = []
+
+//Buscamos si ya hay info en el array
+let recuperoStorage = localStorage.getItem('pelisFav')
+
+if (recuperoStorage !== null){
+    pelisFavoritas = JSON.parse(recuperoStorage)
+}
+
+//Seleccionamos el boton de favoritos
+let botonFav = document.querySelector('.favoritos');
+
+//Si el id ya esta en la lista, el boton debe ofrecer la opcion de quitar de favoritos
+if (pelisFavoritas.includes(detail_id)){
+    botonFav.innerText = "Eliminar de favoritos"
+}
+
+//Creamos un evento para cuando se haga click en el boton de favoritos
+botonFav.addEventListener('click', function(){
+    
+    //Chequear si ya esta el id en el array
+    if (pelisFavoritas.includes(detail_id)){
+        let indicepeli = pelisFavoritas.indexOf(detail_id)
+        pelisFavoritas.splice(indicepeli, 1)
+        botonFav.innerText = "Agregar a Favoritos"
+    }
+    else{
+        //Guardamos el id de la serie seleccionada en el array vacio
+        pelisFavoritas.push(detail_id)
+        botonFav.innerText = "Eliminar de Favoritos"
+    }
+
+
+    
+    //Guardamos el id en el localStorage
+    let favsToString = JSON.stringify(pelisFavoritas)
+    localStorage.setItem('pelisFav', favsToString)
+
+    console.log(localStorage);
 })

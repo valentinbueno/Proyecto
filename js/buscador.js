@@ -56,7 +56,7 @@ fetch(url_peliculas)
         
             peliculasbuscadas.innerHTML += 
             
-            `<div class = "full">
+            `<div class = "fullgeneros">
             // <a href="./detail-movie.html?id=${data.results[i].id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}"></a>
                     <h3 class = "nombres">${data.results[i].original_title}</p>
                 </div>`
@@ -90,7 +90,7 @@ fetch(url_series)
             for(i=0; i<5; i++) {
             seriesbuscadas.innerHTML += 
             
-            `<div class = "full">
+            `<div class = "fullgeneros">
             // <a href=".//detail-serie.html?id=${data.results[i].id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}"></a>
             <h3 class = "nombres">${data.results[i].original_name}</p>
              </div>`

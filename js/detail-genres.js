@@ -51,7 +51,7 @@ fetch(urldetallegenerospeli)
 
 
     let arraygeneros = data.results
-    let seccion = document.querySelector(".padre1")
+    let seccion = document.querySelector(".padre4")
     let elementospeliculas= ''
 
 
@@ -61,9 +61,9 @@ fetch(urldetallegenerospeli)
         elementospeliculas+=
     
                        
-             `<div class="full">
+             `<div class="fullgeneros">
                 <a href="./detail-movie.html?id=${arraygeneros[i].id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${arraygeneros[i].poster_path}"></a>
-                <h3 class="nombres">${arraygeneros[i].title}}</h3>
+                <h3 class="nombres">${arraygeneros[i].title}</h3>
              </div>`
 
                 seccion.innerHTML=elementospeliculas;
@@ -97,7 +97,7 @@ else if (type=="serie") {
 
 
     let arraygeneros = data.results
-    let seccion = document.querySelector(".padre1")
+    let seccion = document.querySelector(".padre4")
     let elementostv= ''
 
 
@@ -106,9 +106,9 @@ else if (type=="serie") {
         elementostv+=
     
                        
-             `<div class="full">
+             `<div class="fullgeneros">
                 <a href="./detail-serie.html?id=${arraygeneros[i].id}"><img  class="peli" src="https://image.tmdb.org/t/p/w500/${arraygeneros[i].poster_path}"></a>
-                <h3 class="nombres">${arraygeneros[i].name}}</h3>
+                <h3 class="nombres">${arraygeneros[i].name}</h3>
              </div>`
 
                 seccion.innerHTML=elementostv;
