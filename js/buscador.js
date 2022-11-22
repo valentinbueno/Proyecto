@@ -1,6 +1,6 @@
 
 let formulario = document.querySelector(".formulario")
-let busqueda = document.querySelector(".busqueda")
+let busqueda = document.querySelector(".search")
 let comentario = document.querySelector(".indicacion")
 let alerta = document.querySelector(".alerta")
 
@@ -21,7 +21,8 @@ let alerta = document.querySelector(".alerta")
 //         busqueda.style.borderRadius = "10px 10px 0 0"
 //     }
 
-//     else{
+// else{
+
 
 
 
@@ -45,11 +46,10 @@ fetch(url_peliculas)
         let peliculasbuscadas = document.querySelector(".peliculasbuscadas")
         
         
-        if (search==0){
+        if (data.results.length==0){
             resultadodebusqueda.innerText = `No hubo resultados para su busqueda`
         } 
 
-        
         
         else{
             for(i=0; i<5; i++) {
@@ -61,6 +61,8 @@ fetch(url_peliculas)
                     <h3 class = "nombres">${data.results[i].original_title}</p>
                 </div>`
         
+
+
         
             }}
     })
@@ -80,7 +82,7 @@ fetch(url_series)
         let seriesbuscadas = document.querySelector(".peliculasbuscadas")
         
         
-        if (search==0){
+        if (data.results.length==0){
             resultadodebusqueda.innerText = `No hubo resultados para su busqueda`
         } 
 
@@ -102,4 +104,6 @@ fetch(url_series)
     })
 
 
+// }
+// })
     
