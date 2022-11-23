@@ -54,7 +54,7 @@ fetch(url_peliculas)
 
         
         else{
-            resultados.innerHTML = `Resultados para ${search}:`
+            resultados.innerText = `Resultados para ${search}:`
 
             for(i=0; i<5; i++) {
         
