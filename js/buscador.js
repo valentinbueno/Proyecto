@@ -35,7 +35,6 @@ let search = QSobject.get("search")
 console.log(search)
 
 let resultados = document.querySelector(".resultadosdebusqueda")
-resultados.innerHTML += `Resultados para ${search}:`
 
 let url_peliculas = `https://api.themoviedb.org/3/search/movie?api_key=5af2599bc48eedc0c872d98ac992b8e3&language=en-US&page=1&include_adult=false&query=${search}`
 
@@ -55,6 +54,8 @@ fetch(url_peliculas)
 
         
         else{
+            resultados.innerHTML = `Resultados para ${search}:`
+
             for(i=0; i<5; i++) {
         
             peliculasbuscadas.innerHTML += 
