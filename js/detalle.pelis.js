@@ -11,7 +11,7 @@ fetch(url_detailmovie)
 })
     .then(function(data){
     console.log(data);
-        
+    
     let seccion = document.querySelector(".padre2")
 
     seccion.innerHTML +=
@@ -27,7 +27,7 @@ fetch(url_detailmovie)
     //             </ul>`
     // `</div>`
 
-
+   
 
     `<div class="textos">
         <h1 class="titulo">${data.original_title}</h1>
@@ -57,8 +57,9 @@ fetch(url_detailmovie)
     for (let i=0; i<data.genres.length; i++){
         elementosgenerosdetalles +=
 
-
+        
         `<a href="./detail-genres.html?id=${data.genres[i].id}&name=${data.genres[i].name}&type=pelicula"><li> ${data.genres[i].name}</li></a>`
+        
     }
 
 
@@ -163,6 +164,36 @@ return response.json();
 .catch(function(error){
     console.log(error)
 })
+
+let botonderecomendaciones = document.querySelector(".botonderecomendaciones")
+botonderecomendaciones.addEventListener("click", function(){
+    let imagen = `https://image.tmdb.org/t/p/w500/original`
+    let peliculasrecomendadas = documente.getElementByiD("peliculasrecomendadas")
+    
+    if (botonderecomendaciones.innerText == "peliculasrecomendadas"){
+        let recomendaciones = `https://api.themoviedb.org/3/movie/${detail_id}/recommendations?api_key=${apikey}&language=en-US&page=1`
+        fetch(recomendaciones)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            let peliculasrecomendadas = ""
+
+            for(i=0; i<5; i=i+1){
+                peliculasrecomendadas +=
+                `<a class="titulos" href="./detail-movie.html?id=${data.results[i]}"></a>`
+                `<img src="${imagen + data.results[i].poster_path}" alt=""></img>`
+                `<h4>${data.results[i].name}</h4>`
+                `<h5>${data.results[i].first_air_date}</h5>`
+            }
+            
+        })
+    }
+    else{
+        let peliculasrecomendadas =""
+        this.innerText = "peliculas recomendadas."
+    }
+}) 
 
 //Creamos un array vacio
 let pelisFavoritas = []

@@ -46,7 +46,7 @@ fetch(url_peliculas)
         console.log(data);
         let resultadodebusqueda = document.querySelector(".resultadosdebusqueda");
         let peliculasbuscadas = document.querySelector(".peliculasbuscadas")
-        
+        // logramos que el evento funcione pero al ponerlo interferia con el buscador y llevaba a que este no funcione correctamente
         
         if (data.results.length==0){
             resultadodebusqueda.innerText = `No hubo resultados para su busqueda`

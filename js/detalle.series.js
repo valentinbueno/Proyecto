@@ -98,6 +98,32 @@ fetch(providers_url)
         console.log(error)
     })
 
+    let botonderecomendaciones = document.querySelector(".botonderecomendaciones")
+    botonderecomendaciones.addEventListener("click", function(){
+    let imagen = `https://image.tmdb.org/t/p/w500/original`
+    let seriesrecomendadas = documente.getElementByiD("seriesrecomendadas")})
+
+    if (botonderecomendaciones.innerText == "seriesrecomendadas"){
+        let recomendaciones = `https://api.themoviedb.org/3/tv/${detail_id}?api_key=${apikey}&language=en-US`
+        fetch(recomendaciones)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            let seriesrecomendadas = ""
+
+            for(i=0; i<5; i=i+1){
+                seriesrecomendadas +=
+                `<a class="titulos" href="./detail-serie.html?id=${data.results[i].detail_id}"></a>`
+                `<img src="${imagen + data.results[i].poster_path}" alt=""></img>`
+                `<h4>${data.results[i].name}</h4>`
+                `<h5>${data.results[i].first_air_date}</h5>`
+            }
+        })
+}
+    
+    
+   
 
 
 //Creamos un array vacio
