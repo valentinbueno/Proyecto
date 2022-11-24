@@ -19,6 +19,7 @@ header{
     flex-direction: column;
     display: flex;
     height: 50px;
+    align-items: center;
     justify-content: space-between;
     margin-right: 15px
 }
@@ -40,6 +41,13 @@ header{
     width: 250px;
     border-radius: 10px;
     border: solid 2px turquoise;
+}
+
+.botonbusqueda{
+    height: 50px;
+    border-radius: 20px;
+    border: solid 2px turquoise;
+    background-color: grey;
 }
 
 .alerta{
@@ -133,6 +141,19 @@ footer{
     flex-direction: row;
     justify-content: space-between;
     margin-top: 10px;
+    align-items: center;
+}
+
+.footeright{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logoapi{
+    height: 40px;
+    margin-right: 10px;
+    border: solid 2px turquoise;
 }
 
 .dev{
@@ -327,7 +348,6 @@ footer{
     float: left;
     width: 33.333%;
 }
-
 
 .nombregenero {
     color: white;
