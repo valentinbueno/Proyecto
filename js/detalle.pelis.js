@@ -165,45 +165,6 @@ return response.json();
     console.log(error)
 })
 
-let botonderecomendaciones = document.querySelector(".boton_recomendaciones")
-botonderecomendaciones.addEventListener(`click`, function(){
-    
-    let imagen = `https://image.tmdb.org/t/p/w500/original`
-    let peliculasrecomendadasseccion = document.getElementById("peliculasrecomendadas")
-    
-    if (botonderecomendaciones.innerText == "RECOMENDACIONES"){
-        let urlrecomendaciones = `https://api.themoviedb.org/3/movie/${detail_id}/recommendations?api_key=${apikey}&language=en-US&page=1`
-        fetch(urlrecomendaciones)
-        .then(function(response){
-          return response.json();
-         })
-        .then(function(data){
-            console.log(data);
-            let peliculasrecomendadas2 = ""
-
-            for(i=0; i<5; i=i+1){
-                peliculasrecomendadasseccion +=
-                `<li class="pelicula">
-                    <a class="titulos" href="./detail-movie.html?id=${data.results[i].detail_id}"></a>
-                    <img src="${imagen + data.results[i].poster_path}" class="pelis"></img>
-                    <h3>${data.results[i].name}</h3>
-                    <h4>${data.results[i].first_air_date}</h4>
-                </li>`
-            }
-            peliculasrecomendadasseccion.innerHTML = peliculasrecomendadas2 
-        })
-        .catch(function(error){
-            console.log(error);
-        })
-
-        this.innerText = "dejar de ver recomendaciones"
-    }
-    else{
-        let peliculasrecomendadas2 =""
-        peliculasrecomendadasseccion.innerHTML = peliculasrecomendadas2 
-        
-    }
-}) 
 
 
 //Creamos un array vacio
